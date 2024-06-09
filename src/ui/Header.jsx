@@ -1,8 +1,13 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div>This is header section</div>
+    <div>
+      <nav>
+        <NavLink to= '/about'>About</NavLink>
+      </nav>
+    </div>
   )
 }
 
