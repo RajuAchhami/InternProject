@@ -23,36 +23,35 @@ export const TopComponents = () => {
       header: "ONLINE LEARNING",
       title: "Online Learning helps you save the time",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporious incididunt ut labore et dolore magna aliqua suspendisse.",
-      btn: "What's Online Course  ?",
+      btn: "What's Online Course?",
       imgUrl: "/banner-item-03.jpg",
     },
   ];
+
   const Card = ({ item }) => {
     return (
       <div
-        className={`flex  flex-col items-center lg:h-max gap-10 lg:items-start py-20 sm:py-28 px-4 sm:px-20 lg:p-20 rounded-3xl  lg:max-w-[1100px] `}
-        style={{ backgroundImage: `url(${item?.imgUrl})` }}
+        className={`flex flex-col items-center gap-10 pt-14 pb-20  md:py-[78px] px-4 sm:px-10 lg:py-20 lg:px-24 lg:items-start rounded-3xl bg-cover bg-center`}
+        style={{ backgroundImage: `url(${item.imgUrl})` }}
       >
         <div className="py-2 px-4 bg-[#7a6ad8] rounded-2xl lg:rounded-3xl">
-          <p className="text-sm lg:text-lg lg:font-semibold text-white">{item?.header}</p>
+          <p className="text-sm lg:text-lg lg:font-semibold text-white">{item.header}</p>
         </div>
-        <div className="text-center  lg:w-[65%] flex flex-col gap-10">
-          <p className="text-4xl lg:text-5xl font-bold text-white left-48 lg:leading-[60px]">
-            {item?.title}
-          </p>
-          <p className="text-sm lg:text-base text-white">{item?.desc}</p>
+        <div className="text-center lg:w-[65%] flex flex-col gap-6 lg:gap-10 lg:text-left">
+          <p className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white leading-tight">{item.title}</p>
+          <p className="text-sm sm:text-base text-white">{item.desc}</p>
         </div>
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
           <div>
-            <p className="text-[#7a6ad8] bg-[#f8e5e5] px-4 py-3 rounded-3xl cursor-pointer">
+            <p className="text-[#7a6ad8] bg-[#f8e5e5] px-4 py-2 sm:py-3 rounded-2xl lg:rounded-3xl cursor-pointer">
               Request Demo
             </p>
           </div>
-          <div className="flex items-center gap-4  cursor-pointer">
-            <div className="size-12 rounded-full bg-[#eae8e8] cursor-pointer flex justify-center items-center">
-              <FaPlay className="size-4 text-[#7a6ad8]" />
+          <div className="flex items-center gap-2 lg:gap-4 cursor-pointer">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full bg-[#eae8e8] flex justify-center items-center">
+              <FaPlay className="text-[#7a6ad8]" />
             </div>
-            <p className="text-white">{item?.btn}</p>
+            <p className="text-sm lg:text-base text-white">{item.btn}</p>
           </div>
         </div>
       </div>
@@ -60,37 +59,30 @@ export const TopComponents = () => {
   };
 
   const NextSlide = () => {
-    setSelectedData((prev) => {
-      return (prev + 1) % TopComponentData.length; // Use modulo to loop back to the beginning
-    });
+    setSelectedData((prev) => (prev + 1) % TopComponentData.length);
   };
 
   const PrevSlide = () => {
-    setSelectedData((prev) => {
-      return (prev - 1 + TopComponentData.length) % TopComponentData.length; // Ensure positive index
-    });
+    setSelectedData((prev) => (prev - 1 + TopComponentData.length) % TopComponentData.length);
   };
+
   return (
-    <div className="w-full ">
-      <div className=" bg-[url('/bgImage.jpg')]  h-screen  flex items-center bg-cover bg-no-repeat">
-        <div className="lg:pl-52 p-6 sm:p-10 lg:w-full flex   flex-col items-center justify-center lg:flex-row   lg:items-end container relative">
+    <div className="w-full">
+      <div className="bg-[url('/bgImage.jpg')] h-screen flex items-center bg-cover bg-no-repeat">
+        <div className="lg:pl-32 xl:pl-48 2xl:pl-52 p-6 sm:p-12 w-full flex flex-col items-center justify-center lg:flex-row lg:items-end relative">
           <Card item={TopComponentData[selectedData]} />
-          <div className="flex flex-row bottom-10 sm:bottom-16 lg:flex-col gap-3 lg:bottom-8 lg:left-20 xl:left-36 absolute">
+          <div className="flex flex-row bottom-10 sm:bottom-16 lg:flex-col gap-3 lg:bottom-8 lg:left-10 xl:left-20 2xl:left-24 absolute">
             <div
-              className="size-14 rounded-full bg-[#eae8e8] cursor-pointer flex justify-center items-center transparent"
-              onClick={() => {
-                PrevSlide();
-              }}
+              className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full bg-[#eae8e8] cursor-pointer flex justify-center items-center"
+              onClick={PrevSlide}
             >
-              <MdKeyboardArrowLeft className="size-12 text-white" />
+              <MdKeyboardArrowLeft className="text-lg sm:text-xl lg:text-2xl text-white" />
             </div>
             <div
-              className="size-14 rounded-full bg-[#eae8e8] cursor-pointer flex justify-center items-center transparent"
-              onClick={() => {
-                NextSlide();
-              }}
+              className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full bg-[#eae8e8] cursor-pointer flex justify-center items-center"
+              onClick={NextSlide}
             >
-              <MdKeyboardArrowRight className="size-12 text-white" />
+              <MdKeyboardArrowRight className="text-lg sm:text-xl lg:text-2xl text-white" />
             </div>
           </div>
         </div>
