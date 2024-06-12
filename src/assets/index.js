@@ -9,6 +9,7 @@ import Course3 from "./course-03.jpg";
 import Course4 from "./course-04.jpg";
 import Course5 from "./course-05.jpg";
 import Course6 from "./course-06.jpg";
+import FunFactsBgImage from "./contact-dec-01.png"
 
 export {
   Course1,
@@ -22,4 +23,5 @@ export {
   Services1,
   Services2,
   Services3,
+  FunFactsBgImage
 };

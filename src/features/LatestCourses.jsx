@@ -91,7 +91,7 @@ const handleClick = (item)=>{
 
     return (
         <div className="container">
-        <div className="flex flex-col items-center my-14">
+        <div className="flex flex-col items-center ">
             <div className="text-center flex flex-col gap-7 mb-10 md:mb-20">
             <p className="text-sm font-semibold text-[#7a6ad8]">LATEST COURSES</p>
             <p className="text-4xl font-semibold text-[#1E1E1E]">
